@@ -6,13 +6,27 @@ public class Hola {
         String nombre = new Scanner (System.in).nextLine ();
         return nombre;
     }
+    public static boolean nombreValido (String nombre)
+    {
+        boolean[] error = new boolean [2];
+        error [0] = (nombre == null);
+        if (!error [0]) {
+            error [1] = nombre.equals ("");
+        }
+        return (!error [0] && !error [1]);
+    }
     public static String saludo (String nombre)
     {
         return "Hola, " + nombre;
     }
-    public static void main(String[] args) {
-        String nombre = preguntarNombre ();
-        String saludo = saludo (nombre);
-        System.out.println(saludo);
+    public static void main(String[] args)
+    {
+        String nombre = null;
+        String saludo = null;
+        while (!nombreValido (nombre)) {
+            nombre = preguntarNombre ();
+            saludo = saludo (nombre);
+        }
+        System.out.println (saludo);
     }
 }
