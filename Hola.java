@@ -15,9 +15,9 @@ public class Hola {
         }
         return (!error [0] && !error [1]);
     }
-    public static String saludo (String nombre)
+    public static String saludar (String nombre)
     {
-        return "Hola, " + nombre;
+        return "! Hola, " + nombre + "!";
     }
     public static void main(String[] args)
     {
@@ -25,7 +25,7 @@ public class Hola {
         String saludo = null;
         while (!nombreValido (nombre)) {
             nombre = preguntarNombre ();
-            saludo = saludo (nombre);
+            saludo = saludar (nombre);
         }
         System.out.println (saludo);
     }
