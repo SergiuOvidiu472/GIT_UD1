@@ -1,7 +1,4 @@
 ######
-# Texto
-*.txt
-!hola.txt
 # Imagenes
 imagenes/*
 
